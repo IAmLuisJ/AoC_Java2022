@@ -13,6 +13,7 @@ public class App {
 
             String thisMove = scanner.nextLine();
             System.out.println(thisMove);
+            move.add(thisMove);
         }
         System.out.println(answer);
         scanner.close();
