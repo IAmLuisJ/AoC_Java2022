@@ -15,5 +15,6 @@ public class App {
             System.out.println(thisMove);
         }
         System.out.println(answer);
+        scanner.close();
     }
 }
