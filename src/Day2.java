@@ -1,13 +1,10 @@
 import java.io.File;
-
 import java.util.Scanner;
-import java.util.ArrayList;
 
-public class App {
+public class Day2 {
     public static void main(String[] args) throws Exception {
         File input = new File("C:\\Users\\luisi\\OneDrive\\Desktop\\Day2\\src\\input.txt");
         Scanner scanner = new Scanner(input);
-        ArrayList<String> move = new ArrayList<String>();
 
         final int win = 6;
         final int tie = 3;
@@ -17,7 +14,6 @@ public class App {
         int paper = 2;
         int scissors = 3;
 
-        // ArrayList<Integer> tournament = new ArrayList<>();
         int totalScore = 0;
         // A for Rock, B for Paper, and C for Scissors.
         // X for Rock, Y for Paper, and Z for Scissors.
@@ -70,5 +66,6 @@ public class App {
             totalScore = totalScore + round;
         }
         System.out.println(totalScore);
+        scanner.close();
     }
 }
