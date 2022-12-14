@@ -1,42 +1,54 @@
 import java.io.File;
 import java.util.ArrayList;
-
-import java.util.Map;
+import java.util.HashSet;
 import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.Set;
 
 public class Day10 {
     public static void main(String[] args) throws Exception {
-        File input = new File("C:\\Users\\a1016060\\GitHub\\AoC_Java2022\\src\\data\\Day10ex.txt");
-        Scanner scanner = new Scanner(input);
-        ArrayList<String> moves = new ArrayList<String>();
-        Map<Integer, String> fileMap = new TreeMap<>();
-        int answer = 0;
+        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/data/Day10.txt");
+        Scanner myScanner = new Scanner(input);
+        ArrayList<String> instructions = new ArrayList<>();
+        int cycle = 0;
+        int registerValue = 1;
+        int sum = 0;
+        ArrayList<Integer> total = new ArrayList<>();
 
-        while (scanner.hasNext()) {
-            String thisMove = scanner.nextLine();
-            System.out.println(thisMove);
-            moves.add(thisMove);
+        while (myScanner.hasNext()) {
+            String line = myScanner.nextLine();
+            instructions.add(line);
+
         }
 
-        for (String move : moves) {
-            String[] part = move.split(" ");
-            if (part[0].equals("$")) {
-                // it is a command
-                // parse the argument
-                if (part[1].equals("cd")) {
-                    // cd - change directory to part 3
-                    String newPath = part[2];
-
-                } else if (part[1].equals("ls")) {
-                    // ls
+        for (String line : instructions) {
+            // System.out.println(line);
+            String[] parts = line.split(" ");
+            if (parts[0].equals("noop")) {
+                cycle++;
+                if (cycle == 20 || cycle == 60 || cycle == 100 || cycle == 140 || cycle == 180 || cycle == 220) {
+                    System.out.println("signal strength: " + (cycle * registerValue));
+                    System.out.println("cycle: " + cycle + " " + registerValue);
+                    total.add(cycle * registerValue);
                 }
             } else {
-                // first part is file size, second part is filename and extension
-
+                int add = Integer.parseInt(parts[1]);
+                for (int i = 0; i < 2; i++) {
+                    cycle++;
+                    if (cycle == 20 || cycle == 60 || cycle == 100 || cycle == 140 || cycle == 180 || cycle == 220) {
+                        System.out.println("signal strength " + (cycle * registerValue));
+                        System.out.println("cycle: " + cycle + " " + registerValue);
+                        total.add(cycle * registerValue);
+                    }
+                }
+                registerValue += add;
             }
         }
-        scanner.close();
-        System.out.println(answer);
+
+        for (Integer num : total) {
+            sum += num;
+        }
+        System.out.println("answer is " + sum);
+        myScanner.close();
     }
+
 }
