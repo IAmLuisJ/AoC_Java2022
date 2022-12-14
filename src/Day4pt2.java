@@ -23,7 +23,6 @@ public class Day4pt2 {
 
             // compare left in right
             if (leftLow >= rightLow && leftLow <= rightHigh) {
-                // then left is within
                 counter++;
             }
             // compare right in left
