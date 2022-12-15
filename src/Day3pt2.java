@@ -7,7 +7,7 @@ import java.util.HashSet;
 
 public class Day3pt2 {
     public static void main(String[] args) throws Exception {
-        File input = new File("C:\\Users\\luisi\\OneDrive\\Desktop\\Day2\\src\\input2.txt");
+        File input = new File("C:\\Users\\luisi\\OneDrive\\Desktop\\Day2\\src\\data\\input2.txt");
         Scanner myScanner = new Scanner(input);
 
         ArrayList<Integer> total = new ArrayList<>();
