@@ -4,15 +4,11 @@ import java.util.Scanner;
 
 public class Day7 {
 
-    class directory {
-        String dirName = "";
-
-    }
-
     public static void main(String[] args) throws Exception {
         File input = new File("C:\\Users\\a1016060\\GitHub\\AoC_Java2022\\src\\data\\Day7ex.txt");
         Scanner scanner = new Scanner(input);
         ArrayList<String> moves = new ArrayList<String>();
+        ArrayList<Directory> fileTree = new ArrayList<>();
 
         int answer = 0;
         String currentDir = "/";
@@ -21,22 +17,25 @@ public class Day7 {
             String thisMove = scanner.nextLine();
             System.out.println(thisMove);
             moves.add(thisMove);
-        }
-
-        for (String move : moves) {
-            String[] part = move.split(" ");
+            String[] part = thisMove.split(" ");
             if (part[0].equals("$")) {
                 // it is a command
                 // parse the argument
                 if (part[1].equals("cd")) {
                     // cd - change directory to part 3
-                    // String newPath = part[2];
+                    currentDir = part[2];
 
                 } else if (part[1].equals("ls")) {
+                    Directory newDir = new Directory(currentDir);
                     // ls
                     // take the following
+                    // peek nextLine before breaking
                     if (part[0].equals("dir")) {
                         // dir
+                        newDir.subDirs.add(new Directory(part[1]));
+                    } else {
+                        newDir.size += Integer.parseInt(part[0]);
+                        newDir.files.add(part[1]);
                     }
                 }
             } else {
@@ -49,6 +48,11 @@ public class Day7 {
                     System.out.println(e.getMessage());
                 }
             }
+        }
+
+        for (String move : moves) {
+            String[] part = move.split(" ");
+
         }
         scanner.close();
         System.out.println(answer);
