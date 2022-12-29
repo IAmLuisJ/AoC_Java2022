@@ -1,12 +1,10 @@
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Day10 {
     public static void main(String[] args) throws Exception {
-        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/data/Day10.txt");
+        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/src/data/Day10.txt");
         Scanner myScanner = new Scanner(input);
         ArrayList<String> instructions = new ArrayList<>();
         int cycle = 0;

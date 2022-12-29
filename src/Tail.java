@@ -77,7 +77,7 @@ public class Tail {
                 tailY--;
             }
         }
-        String tailcoordinate = Integer.toString(tailX) + Integer.toString(tailY);
+        // String tailcoordinate = Integer.toString(tailX) + Integer.toString(tailY);
         // check if tail has been here before
         visited.add(new coordinate(tailX, tailY));
     }
@@ -129,7 +129,7 @@ public class Tail {
                 tailY--;
             }
         }
-        String tailcoordinate = Integer.toString(tailX) + Integer.toString(tailY);
+        // String tailcoordinate = Integer.toString(tailX) + Integer.toString(tailY);
         // check if tail has been here before
         // visited.add(tailcoordinate);
         visited.add(new coordinate(tailX, tailY));

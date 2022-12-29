@@ -3,9 +3,8 @@ import java.util.Scanner;
 
 public class Day4 {
     public static void main(String[] args) throws Exception {
-        File input = new File("src\\data\\Day4troy.txt");
+        File input = new File("src\\data\\Day4input.txt");
         Scanner scanner = new Scanner(input);
-
         int counter = 0;
 
         while (scanner.hasNext()) {

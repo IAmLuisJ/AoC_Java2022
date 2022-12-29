@@ -10,10 +10,10 @@ public class Day10pt2 {
 
     public static void increment() {
         cycle++;
-        if(registerValue == horizontal || (registerValue+1) == horizontal || (registerValue+2) == horizontal) {
-            //print here?
+        if (registerValue == horizontal || (registerValue + 1) == horizontal || (registerValue + 2) == horizontal) {
+            // print here?
             System.out.print("#");
-            //row.set(cycle, "#");
+            // row.set(cycle, "#");
         } else {
             System.out.print(".");
             // row.set(cycle, ".");
@@ -21,7 +21,7 @@ public class Day10pt2 {
         moveCursor();
     }
 
-    public static void moveCursor(){
+    public static void moveCursor() {
         horizontal++;
         if (horizontal >= 40) {
             rowCount++;
@@ -31,23 +31,18 @@ public class Day10pt2 {
     }
 
     public static void main(String[] args) throws Exception {
-        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/data/Day10.txt");
+        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/src/data/Day10.txt");
         Scanner myScanner = new Scanner(input);
         ArrayList<String> instructions = new ArrayList<>();
-        int sum = 0;
-        ArrayList<Integer> total = new ArrayList<>();
-        ArrayList<ArrayList<String>> CRT = new ArrayList<>();
-        ArrayList<String> row = new ArrayList<>();
 
-
-        //parse
+        // parse
         while (myScanner.hasNext()) {
             String line = myScanner.nextLine();
             instructions.add(line);
         }
 
         for (String line : instructions) {
-           // System.out.println(line);
+            // System.out.println(line);
             String[] parts = line.split(" ");
             if (parts[0].equals("noop")) {
                 increment();
@@ -59,7 +54,7 @@ public class Day10pt2 {
             }
         }
 
-       //System.out.println("answer is " + cycle);
+        // System.out.println("answer is " + cycle);
         myScanner.close();
     }
 
