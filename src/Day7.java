@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Day7 {
 
     public static void main(String[] args) throws Exception {
-        File input = new File("C:\\Users\\a1016060\\GitHub\\AoC_Java2022\\src\\data\\Day7ex.txt");
+        File input = new File("/Users/luisjuarez/GitHub/AoC_Java2022/src/data/day7ex.txt");
         Scanner scanner = new Scanner(input);
         ArrayList<String> moves = new ArrayList<String>();
         ArrayList<Directory> fileTree = new ArrayList<>();
